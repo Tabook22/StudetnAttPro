@@ -25,6 +25,15 @@ class Attcsv(models.Model):
         return self.name
 
 
+class Contact(models.Model):
+    first_name= models.CharField(max_length=50 , blank=True, null=True)
+    last_name= models.CharField(max_length=50 , blank=True, null=True)
+    email_name= models.EmailField()
+    ip_address= models.CharField(max_length=50 , blank=True, null=True)
+    message= models.TextField()
+    
+    def __str__(self):
+        return f'{first_name} {last_name}'
 
 """ for more details please check this website
 https://medium.com/@simathapa111/how-to-upload-a-csv-file-in-django-3a0d6295f624 """
