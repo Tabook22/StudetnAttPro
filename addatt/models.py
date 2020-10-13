@@ -16,24 +16,24 @@ class Attcsv(models.Model):
     Event_context = models.CharField(max_length=255, blank=True)
     Component = models.CharField(max_length=255, blank=True)
     Event_name = models.CharField(max_length=255, blank=True)
-    description = models.CharField(max_length=255, blank=True)
+    Description = models.CharField(max_length=255, blank=True)
     Origin = models.CharField(max_length=255, blank=True)
-    Ip_address = models.CharField(max_length=255, blank=True) 
+    IP_address = models.CharField(max_length=255, blank=True) 
 
 
     def __str__(self):
-        return self.name
+        return self.User_full_name
 
 
 class Contact(models.Model):
     first_name= models.CharField(max_length=50 , blank=True, null=True)
     last_name= models.CharField(max_length=50 , blank=True, null=True)
-    email_name= models.EmailField()
+    email= models.EmailField()
     ip_address= models.CharField(max_length=50 , blank=True, null=True)
     message= models.TextField()
     
     def __str__(self):
-        return f'{first_name} {last_name}'
+        return f'{self.first_name} {self.last_name}'
 
 """ for more details please check this website
 https://medium.com/@simathapa111/how-to-upload-a-csv-file-in-django-3a0d6295f624 """
